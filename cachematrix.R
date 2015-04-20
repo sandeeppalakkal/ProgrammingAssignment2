@@ -15,11 +15,10 @@ makeCacheMatrix <- function(x = matrix()) {
     # Ensure that the given input is a square matrix
     if(is.matrix(x)){
         if(nrow(x) != ncol(x)){
-            message("The input matrix is not square! Exiting ....")
-            return
+            stop("The input matrix is not square! Exiting ....")
         }
     }else{
-        message("The input is not a matrix!. Exiting ....")
+        stop("The input is not a matrix!. Exiting ....")
     }
     # Set the inverse matrix TO NULL
     xinv <- NULL
